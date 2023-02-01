@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styles from './Categories.module.css'
 export default function Categories() {
   return (
-    <div className="categories flex h-[80vh] gap-3 m-3">
-      <div className="flex flex-col flex-1 gap-3 col">
-        <div className="relative flex flex-1 gap-3 overflow-hidden row">
+    <section className={styles.categories}>
+      <div className={styles.col}>
+        <div className={styles.row}>
           <img
             src="https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
-            className="object-cover w-full h-full "
           />
           <button>
             <Link className="link" to="/products/1">
@@ -16,26 +16,23 @@ export default function Categories() {
             </Link>
           </button>
         </div>
-        <div className="relative flex flex-1 gap-3 overflow-hidden row">
+        <div className={styles.row}>
           <img
             src="https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
-            className="object-cover w-full h-full "
           />
           <button>
-            <Link to="/products/1" className="link">
-              Women
+            <Link className="link" to="/products/1">
+              Sale
             </Link>
           </button>
         </div>
       </div>
-      <div className="flex flex-col flex-1 gap-3 col">
-        <div className="relative flex flex-1 gap-3 overflow-hidden row">
-          {' '}
+      <div className={styles.col}>
+        <div className={styles.row}>
           <img
             src="https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
-            className="object-cover w-full h-full "
           />
           <button>
             <Link to="/products/1" className="link">
@@ -44,14 +41,13 @@ export default function Categories() {
           </button>
         </div>
       </div>
-      <div className="col col-l flex-[2]">
-        <div className="relative flex gap-3 overflow-hidden row flex-1">
-          <div className="flex flex-col flex-1 gap-3 col">
-            <div className="relative flex gap-3 overflow-hidden row flex-1">
+      <div className={`${styles.col} ${styles.coll}`}>
+        <div className={styles.row}>
+          <div className={styles.col}>
+            <div className={styles.row}>
               <img
                 src="https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt=""
-                className="object-cover w-full h-full"
               />
               <button>
                 <Link to="/products/1" className="link">
@@ -60,13 +56,11 @@ export default function Categories() {
               </button>
             </div>
           </div>
-          <div className="flex flex-col flex-1 gap-3 col">
-            <div className="relative flex flex-1 gap-3 overflow-hidden row">
-              {' '}
+          <div className={styles.col}>
+            <div className={styles.row}>
               <img
                 src="https://images.pexels.com/photos/2703202/pexels-photo-2703202.jpeg?auto=compress&cs=tinysrgb&w=1600"
                 alt=""
-                className="object-cover w-full h-full"
               />
               <button>
                 <Link to="/products/1" className="link">
@@ -76,11 +70,10 @@ export default function Categories() {
             </div>
           </div>
         </div>
-        <div className="relative flex flex-1 gap-3 overflow-hidden row">
+        <div className={styles.row}>
           <img
             src="https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
             alt=""
-            className="object-cover w-full h-full"
           />
           <button>
             <Link to="/products/1" className="link">
@@ -89,6 +82,6 @@ export default function Categories() {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
