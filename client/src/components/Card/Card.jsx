@@ -5,7 +5,7 @@ export default function Card({ item }) {
   console.log(title)
   return (
     <Link to={`/product/${item.id}`}>
-      <div className="card w-[280px] flex flex-col gap-3">
+      <div className="card w-[280px] flex flex-col gap-3 mb-[50px]">
         <div className="image w-full h-[400px] overflow-hidden relative group">
           {isNew && (
             <span className="absolute top-1 left-1 bg-white text-teal-500 px-1 py-1 z-40 font-medium text-xs">
