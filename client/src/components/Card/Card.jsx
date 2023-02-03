@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { VITE_UPLOAD_URL } from '../../config'
 export default function Card({ item }) {
-  const { id, img, img2, isNew, oldPrice, price, title } = item
-  console.log(title)
+  const { id, attributes } = item
+  const { img, img2, isNew, oldPrice, price, title } = attributes
+  console.log(img)
   return (
-    <Link to={`/product/${item.id}`}>
+    <Link to={`/product/${id}`}>
       <div className="card w-[280px] flex flex-col gap-3 mb-[50px]">
         <div className="image w-full h-[400px] overflow-hidden relative group">
           {isNew && (
@@ -13,12 +15,12 @@ export default function Card({ item }) {
             </span>
           )}
           <img
-            src={item.img}
+            src={`${VITE_UPLOAD_URL}${img?.data?.attributes?.url}`}
             alt=""
             className="absolute z-10 object-cover w-full h-full mainImg"
           />
           <img
-            src={item.img2}
+            src={`${VITE_UPLOAD_URL}${img2?.data?.attributes?.url}`}
             alt=""
             className="absolute object-cover w-full h-full secondImg group-hover:z-20"
           />
