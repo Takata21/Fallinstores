@@ -8,8 +8,13 @@ import {
   MdOutlineShoppingCart,
 } from 'react-icons/md'
 import Cart from '../Cart/Cart'
+import { useSelector } from 'react-redux'
 export default function Navbar() {
+  const products = useSelector((state) => state.cart.products)
   const [open, setOpen] = useState(false)
+  const handleClick = () => {
+    setOpen(!open)
+  }
   return (
     <section className="flex h-20 relative">
       <div className="flex items-center justify-between w-full px-8 py-3 wrapper">
@@ -38,10 +43,10 @@ export default function Navbar() {
             <MdSearch color="#777" />
             <MdOutlinePersonOutline color="#777" />
             <MdOutlineFavoriteBorder color="#777" />
-            <button className="relative flex" onClick={() => setOpen(!open)}>
+            <button className="relative flex" onClick={handleClick}>
               <MdOutlineShoppingCart />
               <span className="flex justify-center items-center text-[12px] w-5 h-5 rounded-full bg-[#2879fe] text-white absolute right-[-10px] top-[-10px]">
-                0
+                {products.length}
               </span>
             </button>
           </div>
